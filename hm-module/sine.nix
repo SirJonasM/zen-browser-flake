@@ -70,13 +70,13 @@ in {
                 recursive = false;
                 force = true;
               };
-              "${profilePath}/${profileName}/chrome/utils" = {
-                source = sinePack.bootloader + "/profile/utils";
+              "${profilePath}/${profileName}/chrome/locales" = {
+                source = sinePack.manager + "/locales";
                 recursive = true;
                 force = true;
               };
-              "${profilePath}/${profileName}/chrome/locales" = {
-                source = sinePack.manager + "/locales";
+              "${profilePath}/${profileName}/chrome/utils" = {
+                source = sinePack.bootloader + "/profile/utils";
                 recursive = true;
                 force = true;
               };
@@ -111,6 +111,7 @@ in {
             MANAGED_FILE="$BASE_DIR/zen-sine-mods-nix-managed.json"
 
             mkdir -p "$BASE_DIR/chrome/sine-mods"
+			mkdir -p "$BASE_DIR/chrome/JS"
 
             if [ ! -f "$MODS_FILE" ]; then
               echo '{}' > "$MODS_FILE"
